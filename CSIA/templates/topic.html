@@ -1,0 +1,55 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<h2>Resources</h2>
+<ul>
+{% for resource in resources %}
+  <li><a href="{{ resource.filepath }}">{{ resource.title }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>Add Resource</h2>
+<form action="{{ url_for('topic', topic_id=topic.id) }}" method="POST" enctype="multipart/form-data">
+  <label for="file">File:</label>
+  <input type="file" name="file" id="file">
+  <label for="title">Title:</label>  <!-- this is new -->
+  <input type="text" name="title" id="title">  <!-- this is new -->
+  <br><br>
+  <input type="submit" value="Upload">
+</form>
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1>{{ topic.title }}</h1>
+      <p>{{ topic.description }}</p>
+    </div>
+    <div class="col-lg-4">
+      <a href="{{ url_for('add_resource', topic_id=topic.id) }}" class="btn btn-primary">Add Resource</a>
+    </div>
+  </div>
+  
+  <hr>
+  
+  {% if resources %}
+    <div class="row">
+      {% for resource in resources %}
+        <div class="col-lg-6 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ resource.filename }}</h5>
+              <p class="card-text"><small class="text-muted">{{ resource.timestamp }}</small></p>
+              <a href="{{ url_for('static', filename=resource.filepath) }}" class="btn btn-primary">Download</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No resources available yet.</p>
+  {% endif %}
+</div>
+
+{% endblock %}

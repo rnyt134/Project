@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<title>Mr. Winters Physics</title>
+</head>
+<body>
+
+    <h1>IB Physics</h1>
+	<h2></h2>
+	<h2>HL & SL Topics</h2>
+    <ul>
+        <li><a href="{{ url_for('measurements') }}">1. Measurements and Uncertainties</a></li>
+        <li><a href="{{ url_for('mechanics') }}">2. Mechanics</a></li>
+        <li><a href="{{ url_for('thermal') }}">3. Thermal Physics</a></li>
+        <li><a href="{{ url_for('waves') }}">4. Waves</a></li>
+        <li><a href="{{ url_for('electricity') }}">5. Electricity and Magnetism</a></li>
+        <li><a href="{{ url_for('circular') }}">6. Circular Motion and Gravitation</a></li>
+        <li><a href="{{ url_for('atomic') }}">7. Atomic, Nuclear and Particle Physics</a></li>
+        <li><a href="{{ url_for('energy') }}">8. Energy Production</a></li>
+        <li><a href="{{ url_for('wave_phenomena') }}">9. Wave Phenomena</a></li>
+        <li><a href="{{ url_for('fields') }}">10. Fields</a></li>
+        <li><a href="{{ url_for('electromagnetic_induction') }}">11. Electromagnetic Induction</a></li>
+        <li><a href="{{ url_for('quantum_and_nuclear_physics') }}">12. Quantum and Nuclear Physics</a></li>
+    </ul>
+
+</body>
+</html>

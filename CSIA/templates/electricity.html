@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<form>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <div class="form-group">
+      <label for="upload-file-input">Upload File:</label>
+      <input type="file" class="form-control-file" id="upload-file-input">
+    </div>
+    <p id="upload-file-info"></p>
+    <button type="submit">Submit</button>
+  </form>
+  
+{% endblock %}

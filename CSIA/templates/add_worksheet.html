@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<title>Add Resources - Mr. Winters Physics</title>
+</head>
+<body>
+	<h1>Add Resources</h1>
+	<form action="{{ url_for('add_resource') }}" method="POST">
+		<label for="topic">Topic:</label>
+		<input type="text" id="topic" name="topic"><br><br>
+		
+		<label for="file_type">File Type:</label>
+		<select id="file_type" name="file_type">
+			<option value="worksheet">Worksheet</option>
+			<option value="worksheet_answer">Worksheet Answer</option>
+			<option value="slides">Slides</option>
+			<!-- add more options as needed -->
+		</select><br><br>
+		
+		<label for="file">File:</label>
+		<input type="file" id="file" name="file"><br><br>
+		
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
